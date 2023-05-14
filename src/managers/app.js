@@ -3,7 +3,7 @@ import fs from 'fs'
 
 class productManager {
   constructor() {
-    this.ArchivoPath = './data/Productos.json';
+    this.ArchivoPath = './src/datas/data/Productos.json';
     this.ArchivoProducto = [];
   }
   /*Debe tener un método getProducts, el cual debe leer el archivo de productos 
@@ -78,7 +78,7 @@ class productManager {
     }
   }
   read_productos() {
-    //console.log(this.users)
+    console.log('read_productos',this.ArchivoProducto)
     return this.ArchivoProducto
 }
   read_producto(id) {
@@ -108,7 +108,7 @@ class productManager {
 
 
 let ticket = new productManager();
- ticket.getProduct();
+ticket.getProduct();
 // ticket.read_productos();
 // ticket.addProduct({title:"Detergente008",description:"concentrado",price:200,thumbnail:"sin imagen",stock:25});
 // ticket.addProduct({title:"escoba",description:"linux",price:120,thumbnail:"sin imagen",stock:50});
@@ -120,7 +120,6 @@ let ticket = new productManager();
 // ticket.addProduct({title:"jabon de mano",description:"rexona",price:400,thumbnail:"sin imagen",stock:225});
 // ticket.addProduct({title:"dentifrico",description:"colgate",price:800,thumbnail:"sin imagen",stock:325});
 // ticket.addProduct({title:"cepillo dental",description:"colgate",price:200,thumbnail:"sin imagen",stock:125});
-// ticket.update_producto(8, {title: 'pasta dental',description: 'kolynos',price: 600,thumbnail: 'sin imagen',stock: 225,});
-// ticket.deleteProduct(9);
-
+//ticket.update_producto({title: 'pasta dental',description: 'kolynos',price: 600,thumbnail: 'sin imagen',stock: 225,});
+//ticket.deleteProduct();
 export default ticket

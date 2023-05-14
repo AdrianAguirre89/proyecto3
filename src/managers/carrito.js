@@ -3,7 +3,7 @@ import fs from 'fs'
 
 class CartManager {
   constructor() {
-    this.ArchivoPath = './dato/Carritos.json';
+    this.ArchivoPath = './src/datas/dato/Carritos.json';
     this.ArchivoCarrito = [];
   }
   
@@ -54,6 +54,38 @@ class CartManager {
     let one = this.ArchivoCarrito.find(each=>each.id===id)
     return one
     
+}
+async update_carrito(id, carrito_actualizar) {
+  try {
+    let carro_actulizar = this.getProductById(id);
+    for (let prop in carrito_actualizar) {
+      console.log("for_prop",carro_actulizar[prop]);
+      carro_actulizar[prop] = carrito_actualizar[prop];
+    }
+    // this.Products[id] = producto
+    let data_json = JSON.stringify(this.ArchivoCarrito, null, 2);
+    await fs.promises.writeFile(this.ArchivoPath, data_json);
+    //console.log('updated productos: ' + id);
+    return 'updated carrito: ' + id;
+  } catch (error) {
+    //console.log(error);
+    return 'error: updating carrito';
+  }
+}
+async DeleteCarrito(id) {
+  try {
+    let one = this.getProductById(id);
+    if (one) {
+      this.ArchivoCarrito = this.ArchivoCarrito.filter((each) => each.id !== id);
+      let data_json = JSON.stringify(this.ArchivoCarrito, null, 2);
+      await fs.promises.writeFile(this.ArchivoPath, data_json);
+      console.log('delete user: ' + id);
+      return 'delete user: ' + id;
+    }
+  } catch (error) {
+    //console.log(error);
+    return 'error: deleting user';
+  }
 }
 }
 
