@@ -56,20 +56,12 @@
     "id": 7
   },
   {
-    "title": "jabon de mano",
-    "description": "rexona",
-    "price": 400,
+    "title": "pasta dental",
+    "description": "kolynos",
+    "price": 600,
     "thumbnail": "sin imagen",
     "stock": 225,
     "id": 8
-  },
-  {
-    "title": "dentifrico",
-    "description": "colgate",
-    "price": 800,
-    "thumbnail": "sin imagen",
-    "stock": 325,
-    "id": 9
   },
   {
     "title": "cepillo dental",

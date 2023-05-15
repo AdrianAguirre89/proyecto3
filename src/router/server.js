@@ -1,7 +1,7 @@
 import express, { response } from 'express'
-import Productos from './app.js'
-import ticket from './app.js'
-import changos from './carrito.js'
+import Productos from '../managers/app.js'
+import ticket from '../managers/app.js'
+import changos from '../managers/carrito.js'
 
 let server = express()
 
